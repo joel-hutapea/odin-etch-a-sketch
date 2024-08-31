@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+}
+
+#container {
+    border-style: solid;
+    border-color: black;
+}
+
+.row {
+    display: flex;
+}
+
+.hover-on {
+    background-color: blue;
+}
