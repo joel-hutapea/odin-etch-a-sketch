@@ -13,7 +13,3 @@ body {
 .row {
     display: flex;
 }
-
-.hover-on {
-    background-color: blue;
-}

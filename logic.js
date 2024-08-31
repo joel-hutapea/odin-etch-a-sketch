@@ -15,10 +15,12 @@ function generateGrid(blocksPerSide) {
         for (n = 0; n < blocksPerSide; n++) {
             const block = document.createElement("div");
             block.style.width = `${space/blocksPerSide}px`;
-            block.style.height = `${space/blocksPerSide}px`;
+            block.style.height = `${space/blocksPerSide}px`;            
     
             block.addEventListener("mouseover", function() {
-                block.classList.add("hover-on");
+                const randomColor = getRandomRgbColor();
+                console.log(randomColor);
+                block.style.backgroundColor = randomColor;
             })
     
             row.appendChild(block);
@@ -37,4 +39,11 @@ function generateNewGrid() {
         container.textContent = "";
         generateGrid(newSides);
     }
+}
+
+function getRandomRgbColor() {
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    return `rgb(${red}, ${green}, ${blue})`;
 }
