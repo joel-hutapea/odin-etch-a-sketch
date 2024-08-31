@@ -15,12 +15,17 @@ function generateGrid(blocksPerSide) {
         for (n = 0; n < blocksPerSide; n++) {
             const block = document.createElement("div");
             block.style.width = `${space/blocksPerSide}px`;
-            block.style.height = `${space/blocksPerSide}px`;            
+            block.style.height = `${space/blocksPerSide}px`;
+            block.style.opacity = 0;
     
             block.addEventListener("mouseover", function() {
                 const randomColor = getRandomRgbColor();
-                console.log(randomColor);
                 block.style.backgroundColor = randomColor;
+                let opacity = Number(block.style.opacity);
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    block.style.opacity = opacity;
+                }
             })
     
             row.appendChild(block);
